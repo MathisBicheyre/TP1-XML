@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	
+	<!-- Title -->
+	<xs:element name="title">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+      			<xs:maxLength value="40"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<!-- Author -->
+	<xs:element name="author">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+      			<xs:maxLength value="40"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<!-- Character's Name -->
+	<xs:element name="name">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+      			<xs:maxLength value="40"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<!-- Friend Of -->
+	<xs:element name="friend-of" type="xs:string"/>
+	
+	<!-- Since -->
+	<xs:element name="since" type="xs:date"/>
+	
+	<!-- Qualification -->
+	<xs:element name="qualification">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:minLength value="0"/>
+      			<xs:maxLength value="40"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<!-- Character -->
+	<xs:element name="character">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name"/>
+				<xs:element ref="friend-of" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="since"/>
+				<xs:element ref="qualification"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<!-- Root Element -->
+	<xs:element name="book">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="title"/>
+				<xs:element ref="author"/>
+				<xs:element ref="character" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="isbn" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="10"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

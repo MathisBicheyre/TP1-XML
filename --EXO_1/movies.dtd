@@ -1,0 +1,45 @@
+
+<!ELEMENT movies  ( movie+ )>
+
+<!-- <!ELEMENT movie  ( title , genre , duration , author , language , actors , year , ratings? , description , showings )>
+ -->
+
+<!ELEMENT movie ANY>
+
+<!ELEMENT title  ( #PCDATA )>
+
+<!ELEMENT genre  ( #PCDATA )>
+
+<!ELEMENT duration  ( #PCDATA )>
+
+<!ELEMENT author  ( #PCDATA )>
+
+<!ELEMENT language  ( #PCDATA )>
+
+<!ELEMENT actors  ( actor+ )>
+
+<!ELEMENT actor  ( #PCDATA )>
+
+<!ELEMENT year  ( #PCDATA )>
+
+<!ELEMENT ratings  ( prating? , srating? )>
+
+<!ELEMENT prating  ( #PCDATA )>
+
+<!ELEMENT srating  ( #PCDATA )>
+
+<!ELEMENT description  ( #PCDATA )>
+
+<!ELEMENT showings  ( projection+ )>
+
+<!ELEMENT projection  ( days , hours )>
+
+<!ELEMENT days  ( day+ )>
+
+<!ELEMENT day  ( #PCDATA )>
+
+<!ELEMENT hours  ( hour+ )>
+
+<!ELEMENT hour  ( #PCDATA )>
+
+
